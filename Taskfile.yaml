@@ -1,0 +1,16 @@
+version: '3'
+
+tasks:
+  flash:
+    cmd: tinygo flash -target=pico -stack-size=8kb -monitor  04-rpi-hackalong/cmd/mqtt
+  concurrent:
+    cmd: tinygo flash -target=pico -stack-size=8kb -monitor  04-rpi-hackalong/cmd/mqtt-concurrent
+  native:
+    cmd: go run 04-rpi-hackalong/cmd/mqtt-native
+  client:
+    cmd: go run 04-rpi-hackalong/cmd/client
+  monitor:
+    cmd: tinygo monitor
+  server:
+    cmd: docker run -p 4222:4222 -p 8433:8433 -v ./nats-server.conf:/etc/nats/nats-server.conf nats:latest -c /etc/nats/nats-server.conf
+

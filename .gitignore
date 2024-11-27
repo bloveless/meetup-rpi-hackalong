@@ -1,0 +1,5 @@
+.idea
+virtus-GoMeet-brennon.creds
+virtus-GoMeet-brennon.jwt
+mqtt.jwt
+secrets.go
